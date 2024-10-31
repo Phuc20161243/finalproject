@@ -1,0 +1,216 @@
+/* style-monitoring.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+    background: url('bautroi.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    flex-wrap: wrap;
+}
+
+.header-left .logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.header-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.header-right a {
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-right a.active {
+    color: #cc0000;
+    border-bottom: 2px solid #cc0000;
+}
+
+.header-right a:hover {
+    color: #0033cc;
+}
+
+.title-section {
+    margin-top: 50px;
+}
+
+.title-section h1 {
+    font-size: 3em;
+    color: #2f16ee;
+    margin: 0;
+}
+
+.container {
+    background-image: url("4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    max-width: 960px;
+    border: 5px solid #4CAF50;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.sensor-grid {
+    color: rgb(15, 15, 5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sensor-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 150px;
+    max-width: 100%; /* Adjust for mobile responsiveness */
+}
+
+.sensor-image {
+    width: 120px;
+    height: 100px;
+    max-width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.slider-container {
+    margin: 20px 100px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+
+.sensor-image-1 {
+    width: 120px;
+    height: 100px;
+    margin: 10px 0;
+}
+
+.slider {
+    width: 100%;
+}
+
+.slave-box {
+    border: 2px solid rgba(0, 123, 255, 0.5);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.2);
+}
+
+.slave-box h3 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+#time {
+    align-items: center;
+    font-family: Tahoma;
+    font-size: 30px;
+    color: darkred;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    background-color: rgba(255, 0, 0, 0.5);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        background-color: transparent;
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header-left .logo {
+        width: 80%;
+    }
+
+    .title-section h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .sensor-info {
+        width: 100%;
+    }
+
+    .sensor-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    #time {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-right a {
+        margin: 5px 0;
+    }
+
+    .title-section h1 {
+        font-size: 1.8em;
+    }
+
+    .sensor-info {
+        width: 100%;
+    }
+
+    .sensor-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .slider-container {
+        width: 90%;
+    }
+
+    .slave-box {
+        padding: 10px;
+    }
+
+    #time {
+        font-size: 20px;
+    }
+}

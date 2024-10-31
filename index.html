@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Đồ án tốt nghiệp</title>
+    <link rel="stylesheet" href="style-home.css">
+</head>
+<body>
+    <!-- Cửa sổ đăng nhập -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-container">
+            <h2>Đăng Nhập</h2>
+            <form id="loginForm">
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="button" onclick="submitLogin()">Đăng nhập</button>
+            </form>
+        </div>
+    </div>
+    <header>
+        <div class="header-left">
+            <img src="logo.jpeg" alt="Logo trường" class="logo">
+        </div>
+        <nav class="header-right">
+            <a href="index.html" class="active">Trang chủ</a>
+            <a href="about.html">Giới thiệu</a>
+            <a href="monitoring.html">Giám sát</a>
+            <a href="contact.html">Liên hệ</a>
+        </nav>
+    </header>
+
+    <section class="title-section">
+        <h1>ĐỒ ÁN TỐT NGHIỆP</h1>
+    </section>
+    <div class="content">
+        <p>ĐỀ TÀI: HỆ THỐNG GIÁM SÁT CHẤT LƯỢNG MÔI TRƯỜNG SỬ DỤNG CÔNG NGHỆ LORA</p>
+        <p>GVHD: Th.S Nguyễn Ngô Lâm</p>
+        <p>SVTH:<br>
+           Đoàn Minh Thái 20161259<br>
+           Lê Hữu Phúc 20161243</p>
+    </div>
+    <script>
+        // Xử lý sự kiện đăng nhập
+        function submitLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Kiểm tra thông tin đăng nhập
+            if (username === "admin" && password === "123456") {
+                alert("Đăng nhập thành công!");
+                document.getElementById('loginModal').style.display = 'none'; // Ẩn cửa sổ đăng nhập
+                document.getElementById('mainContent').style.display = 'block'; // Hiển thị nội dung trang
+            } else {
+                alert("Tên đăng nhập hoặc mật khẩu không chính xác!");
+            }
+        }
+    </script>
+</body>
+</html>
