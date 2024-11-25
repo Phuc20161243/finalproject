@@ -28,7 +28,7 @@
     <div class="container">
         <!-- Slave 1 Container -->
         <div class="slave-box" id="slave1-box">
-            <h3 style="color: red;">Slave 1</h3>
+            <h3 style="color: red;">Trạm 1</h3>
             <div class="sensor-grid">
                 <div class="sensor-info">
                     <h2>Nhiệt Độ: <span id= "nhietdo">00</span> </h2>
@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="sensor-info">
-                    <h2>Gas: <span id= "gas">00</span></h2>
+                    <h2>CO: <span id= "gas">00</span></h2>
                     <img src="5.png" alt="Cảm Biến Gas MQ2" class="sensor-image">
                 </div>
 
@@ -54,9 +54,20 @@
         
         <!-- Slave 2 Container -->
         <div class="slave-box" id="slave2-box">
-            <h3 style="color: rgb(219, 20, 20);">Slave 2</h3>
+            <h3 style="color: rgb(219, 20, 20);">Trạm 2</h3>
+            <div class="toggle-container">
+                <button id="toggle-button" class="toggle-off">OFF</button>
+            </div>
             <div class="sensor-grid">
-                
+                <div class="sensor-info">
+                    <h2>Nhiệt Độ: <span id= "nhietdob">00</span> </h2>
+                    <img src="nhietdo1.png" alt="Cảm Biến Nhiệt Độ" class="sensor-image">
+                </div>
+
+                <div class="sensor-info">
+                    <h2>Độ Ẩm: <span id= "doamb">00</span></h2>
+                    <img src="doam1.png" alt="Cảm Biến Độ Ẩm" class="sensor-image">
+                </div>
 
                 <div class="sensor-info">
                     <h2>Độ bụi: <span id= "dust">00</span></h2>
@@ -68,88 +79,28 @@
                     <img src="7.png" alt="Cảm Biến Âm Thanh" class="sensor-image">
                 </div>
             </div>
-
-            
-            <div class="slave-box" id="slave3-box">
-                <h3 style="color: rgb(220, 15, 15);">Thiên tai</h3>
-            
-                <div class="slider-container">
-                    <h2>Gió: <span id="wind">50</span></h2>
+            <div id="slave3-box">
+                <div class="slider-container" id="wind-box">
+                    <h2>Bão: <span id="wind">50</span></h2>
                     <img src="10.png" alt="Cảm Biến Gió" class="sensor-image-1">
                     <input type="range" min="0" max="100" value="50" class="slider" id="windSlider">
                     <p>Giá trị gió: <span id="windValue">50</span></p>
                 </div>
             
-                <div class="slider-container">
+                <div class="slider-container" id="rain-box">
                     <h2>Mưa: <span id="rain">00</span></h2>
                     <img src="9.png" alt="Cảm Biến Mưa" class="sensor-image-1">
                     <input type="range" min="0" max="100" value="50" class="slider" id="rainSlider">
                     <p>Giá trị mưa: <span id="rainValue">50</span></p>
                 </div>
-            </div>
+           </div>
         </div>
-        
-        
-        
-        <script src="test2.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
         <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-        <script>
-        // Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAvwvpmUQQZP7dqBknjFQUvjGjKl7CBI-4",
-            authDomain: "datn-9937a.firebaseapp.com",
-            databaseURL: "https://datn-9937a-default-rtdb.firebaseio.com",
-            projectId: "datn-9937a",
-            storageBucket: "datn-9937a.appspot.com",
-            messagingSenderId: "1064950197769",
-            appId: "1:1064950197769:web:0aa93c9c6917b9a290d2d8",
-            measurementId: "G-NLTQMENSC7"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-
-
-        var nhietdo1 = document.getElementById('nhietdo') ; //khai báo biến nhiệt độ. var là kiểu dữ liệu var=int+float+char ...
-        var dbRef = firebase.database().ref().child('slave1/Nhiet do'); //đọc giá trị nhietDo từ firebase
         
-        var doam2 = document.getElementById('doam');
-        var dbRef2 = firebase.database().ref().child('slave1/Do am');   //đọc giá trị doAm từ firebase
-        
-        var gas3 = document.getElementById('gas');
-        var dbRef3 = firebase.database().ref().child('slave1/Gas');   //đọc giá trị luongMua từ firebase
-        
-
-        var uv4 = document.getElementById('uv') ; //khai báo biến nhiệt độ. var là kiểu dữ liệu var=int+float+char ...
-        var dbRef4 = firebase.database().ref().child('slave1/Tia UV'); //đọc giá trị nhietDo từ firebase
-        
-        var dust5 = document.getElementById('dust');
-        var dbRef5 = firebase.database().ref().child('slave2/Do bui');   //đọc giá trị doAm từ firebase
-        
-        var sound6 = document.getElementById('sound');
-        var dbRef1 = firebase.database().ref().child('slave2/Do on');
-
-        var rain7 = document.getElementById('rain');
-        var dbRef6 = firebase.database().ref().child('slave2/Mua'); 
-
-        var wind8 = document.getElementById('wind');
-        var dbRef7 = firebase.database().ref().child('slave2/Toc do'); 
-
-        
-
-        dbRef.on('value', snap => nhietdo1.innerText = snap.val() + "*C");
-        dbRef2.on('value', snap => doam2.innerText = snap.val() + "%");
-        dbRef3.on('value', snap => gas3.innerText = snap.val() + "%LEL");
-        dbRef4.on('value', snap => uv4.innerText = snap.val() + "nm");
-        dbRef5.on('value', snap => dust5.innerText = snap.val() + "ug/m3");
-        dbRef1.on('value', snap => sound6.innerText = snap.val() + "dB");
-        dbRef6.on('value', snap => rain7.innerText = snap.val() + "m3");
-        dbRef7.on('value', snap => wind8.innerText = snap.val() + "m/s");
-        </script>
         <script src="script.js"></script>
 </body>
 </html>

@@ -63,7 +63,7 @@ header {
     background-repeat: no-repeat;
     margin: 0 auto;
     max-width: 960px;
-    border: 5px solid #4CAF50;
+    border: 5px solid none;
     padding: 15px;
     border-radius: 8px;
 }
@@ -123,28 +123,59 @@ header {
     font-family: Arial, sans-serif;
     font-weight: bold;
 }
+.slave3-box {
+    border: none; /* Loại bỏ viền */
+    padding: 10px; /* (Tuỳ chọn) Tăng khoảng cách bên trong nếu cần */
+    background-color: transparent; /* (Tuỳ chọn) Đảm bảo nền trong suốt */
+    box-shadow: none; /* Loại bỏ bóng nếu có */
+}
+/* Container cho nút On/Off */
+.toggle-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Nút On/Off cơ bản */
+#toggle-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Trạng thái OFF */
+.toggle-off {
+    background-color: #d32f2f; /* Màu đỏ */
+}
+
+/* Trạng thái ON */
+.toggle-on {
+    background-color: #388e3c; /* Màu xanh lá */
+}
 
 #time {
     align-items: center;
     font-family: Tahoma;
     font-size: 30px;
-    color: darkred;
+    color: red;
     margin-bottom: 20px;
 }
 
+/* Hiệu ứng nhấp nháy màu đỏ */
 .highlight {
-    background-color: rgba(255, 0, 0, 0.5);
     animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    0%, 100% {
+    50% {
         background-color: rgba(255, 0, 0, 0.5);
     }
-    50% {
-        background-color: transparent;
-    }
 }
+
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -214,3 +245,4 @@ header {
         font-size: 20px;
     }
 }
+
