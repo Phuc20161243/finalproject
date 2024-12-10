@@ -50,8 +50,31 @@
                     <img src="8.png" alt="Cảm Biến UV" class="sensor-image">
                 </div>
             </div>
+            <div class="charts-row">
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="temperatureChart"></canvas>
+                    
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="humidityChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="COChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="UVChart"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
         <!-- Slave 2 Container -->
         <div class="slave-box" id="slave2-box">
             <h3 style="color: rgb(219, 20, 20);">Trạm 2</h3>
@@ -81,9 +104,9 @@
             </div>
             <div id="slave3-box">
                 <div class="slider-container" id="wind-box">
-                    <h2>Bão: <span id="wind">50</span></h2>
+                    <h2>Gió: <span id="wind">50</span></h2>
                     <img src="10.png" alt="Cảm Biến Gió" class="sensor-image-1">
-                    <input type="range" min="0" max="100" value="50" class="slider" id="windSlider">
+                    <input type="range" min="0" max="18" value="50" class="slider" id="windSlider">
                     <p>Giá trị gió: <span id="windValue">50</span></p>
                 </div>
             
@@ -94,12 +117,58 @@
                     <p>Giá trị mưa: <span id="rainValue">50</span></p>
                 </div>
            </div>
+           <div class="charts-row">
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="Temperature2Chart"></canvas>
+                    
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="Humidity2Chart"></canvas>
+                    
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="DustChart"></canvas>
+                    
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="SoundChart"></canvas>
+                    
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="WindChart"></canvas>
+                    
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-box">
+                        <canvas id="RainChart"></canvas>
+                    
+                    </div>
+                </div>
+            </div>
         </div>
+
+       
+        
+        
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
         <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <canvas id="dataChart" width="400" height="200"></canvas>
+
+
         
         <script src="script.js"></script>
 </body>
