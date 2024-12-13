@@ -146,7 +146,7 @@ toggleButton.addEventListener("click", () => {
         console.log("Thiết bị được bật!");
 
         // Ghi trạng thái "Special" lên Firebase
-        firebase.database().ref('DATN_1/systemState').set("1");
+        firebase.database().ref('slave2/systemState').set("1");
 
         // Kiểm tra lại ngay khi bật
         checkValues();
@@ -159,7 +159,7 @@ toggleButton.addEventListener("click", () => {
         console.log("Thiết bị đã tắt!");
 
         // Ghi trạng thái "Normal" lên Firebase
-        firebase.database().ref('DATN_1/systemState').set("0");
+        firebase.database().ref('slave2/systemState').set("0");
 
         // Tắt nhấp nháy ngay lập tức
         checkValues();
@@ -167,7 +167,7 @@ toggleButton.addEventListener("click", () => {
 });
 
 // Cập nhật trạng thái systemState từ Firebase
-const systemStateRef = firebase.database().ref('DATN_1/systemState');
+const systemStateRef = firebase.database().ref('slave2/systemState');
 
 systemStateRef.on('value', snap => {
     const state = snap.val();
