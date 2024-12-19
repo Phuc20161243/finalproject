@@ -54,7 +54,7 @@
         dbRef4.on('value', snap => uv4.innerText = snap.val() + "");
         dbRef5.on('value', snap => dust5.innerText = snap.val() + "ug/m3");
         dbRef1.on('value', snap => sound6.innerText = snap.val() + "dB");
-        dbRef6.on('value', snap => rain7.innerText = snap.val() + "mm");
+        dbRef6.on('value', snap => rain7.innerText = snap.val() + "%");
         dbRef7.on('value', snap => wind8.innerText = snap.val() + "");
         dbRef8.on('value', snap => nhietdo2.innerText = snap.val() + "*C");
         dbRef9.on('value', snap => doam2.innerText = snap.val() + "%");
